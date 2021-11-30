@@ -6,13 +6,6 @@
 
 
 
-# What we're going to do now is configure fencing on the cluster. Fencing is the isolation of a failed node in a cluster
-# which is performed by a STONITH resource. STONITH stands for, Shoot the other node in the head, a bit melodramtic maybe but, 
-# that exactly what it does. It'll restart the failed node, allowing to go down, reset, come back up and join the cluster, hopefully
-# bringing the cluster into a healthy state
-
-
-
 # register a new application in Azure Active Directory - linuxcluster-app
 # create custom role
 az role definition create --role-definition fence-agent-role.json
