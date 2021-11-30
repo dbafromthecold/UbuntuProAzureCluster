@@ -41,10 +41,5 @@ sudo crm configure property stonith-enabled=true
 
 
 
-# confirm STONITH device
-sudo crm configure show fence-vm
-
-
-
 # check cluster status
 sudo crm status

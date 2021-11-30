@@ -12,7 +12,7 @@ sudo crm status
 
 
 # test moving the availability group
-sudo crm resource move ms-ag1 ap-server-01
+sudo crm resource move ms-ag1 ap-server-02
 
 
 

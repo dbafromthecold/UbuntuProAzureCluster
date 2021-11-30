@@ -102,7 +102,8 @@ sudo chmod 400 /var/opt/mssql/secrets/passwd
 
 
 
-# Create the availability group
+# Create the availability group with 3 nodes to provide quorum
+# Standard edition allows for 2 nodes plus a configuration only SQL Express instance
 CREATE AVAILABILITY GROUP [ag1]
      WITH (CLUSTER_TYPE = EXTERNAL)
      FOR REPLICA ON
@@ -179,14 +180,14 @@ sudo crm resource status ms-ag1
 USE [master];
 GO
 
-CREATE DATABASE [testdatabase];
+CREATE DATABASE [testdatabase1];
 GO
 
-BACKUP DATABASE [testdatabase] TO DISK = N'/var/opt/mssql/data/testdatabase.bak';
-BACKUP LOG [testdatabase] TO DISK = N'/var/opt/mssql/data/testdatabase.trn';
+BACKUP DATABASE [testdatabase1] TO DISK = N'/var/opt/mssql/data/testdatabase1.bak';
+BACKUP LOG [testdatabase1] TO DISK = N'/var/opt/mssql/data/testdatabase1.trn';
 GO
 
-ALTER AVAILABILITY GROUP [ag1] ADD DATABASE [testdatabase];
+ALTER AVAILABILITY GROUP [ag1] ADD DATABASE [testdatabase1];
 GO
 
 
@@ -208,8 +209,14 @@ sudo crm resource status virtualip
 
 
 
-# view load balancer
-az network lb list --resource-group apdemo
+# Load Balancer requirement will be removed in the future 
+# Allow deployment via multiple subnets
+# https://techcommunity.microsoft.com/t5/azure-sql-blog/simplify-azure-sql-virtual-machines-ha-and-dr-configuration-by/ba-p/2882897
+
+
+
+# view load balancer frontend Ip
+az network lb list --resource-group apdemo --query "[].frontendIpConfigurations[].privateIpAddress"
 
 
 
