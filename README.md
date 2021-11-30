@@ -5,6 +5,7 @@ Code to create a pacemaker cluster running on Ubuntu Pro 20.04 to deploy a SQL a
 Pre-requisities: -
 - azure cli installed
 - azure account
+- mssql-cli installed (optional)
 
 Steps performed are: -
 

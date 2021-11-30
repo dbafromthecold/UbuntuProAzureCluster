@@ -6,8 +6,8 @@
 
 
 
-# create availability group extended event
-ALTER EVENT SESSION  AlwaysOn_health ON SERVER WITH (STARTUP_STATE=ON);
+# start availability group extended event
+ALTER EVENT SESSION AlwaysOn_health ON SERVER WITH (STARTUP_STATE=ON);
 GO
 
 
