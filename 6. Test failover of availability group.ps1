@@ -11,6 +11,10 @@ sudo crm status
 
 
 
+# check availability group constraints
+sudo crm resource constraints ms-ag1
+
+
 # test moving the availability group
 sudo crm resource move ms-ag1 ap-server-02
 
