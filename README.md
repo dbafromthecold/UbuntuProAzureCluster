@@ -2,7 +2,7 @@
 
 Code to create a pacemaker cluster running on Ubuntu Pro 20.04 to deploy a SQL availability group.
 
-Blog post running through these steps is here: -
+Blog post running through these steps is here: - <br>
 https://dbafromthecold.com/2021/12/01/building-a-pacemaker-cluster-to-deploy-a-sql-server-availability-group-in-azure/
 
 Pre-requisities: -
