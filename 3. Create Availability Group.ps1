@@ -151,6 +151,11 @@ mssql-cli -S ap-server-01 -U sa -P Testing1122 -Q "SELECT [group_name], [node_na
 
 
 
+# disable STONITH
+sudo crm configure property stonith-enabled=false
+
+
+
 # create the AG resource
 sudo crm configure primitive ag1_cluster \
    ocf:mssql:ag \
