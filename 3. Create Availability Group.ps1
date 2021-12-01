@@ -255,3 +255,12 @@ sudo crm resource status virtualip-group
 
 # view cluster status
 sudo crm status
+
+
+
+# create listener in SQL
+ALTER AVAILABILITY GROUP [ag1] ADD LISTENER N'ap-server-10' (
+WITH IP
+((N'192.168.0.10', N'255.255.255.0')), PORT=1433);
+GO
+
